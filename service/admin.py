@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product, Bin
+from .models import Product, Bin, Home
 # Register your models here.
 admin.site.register(Bin)
 
@@ -10,3 +10,8 @@ class ProductAdmin(admin.ModelAdmin):
     fields = ['id', 'title', 'cost']
     list_filter = ['cost']
     search_fields = ['title']
+
+
+@admin.register(Home)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['size', 'cost', 'adr', 'bal']

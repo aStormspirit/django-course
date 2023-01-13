@@ -1,0 +1,3 @@
+function isAbout(){
+    alert('About')
+}
