@@ -1,7 +1,11 @@
 {% extends 'web_lib/main.html' %}
 
 {% block content %}
- <div class="container">
+<div
+ <div class="card card-block">
+     <a class="btn btn-sm btn-info" href="{% url 'create_book' %}">Создать книгу</a>
+     <a class="btn btn-sm btn-info" href="{% url 'create_book' %}">Создать книгу</a>
+     <a class="btn btn-primary btn-sm btn-block" href="{% url 'create_book' %}">Создать книгу</a>
     <h1>Books</h1>
     {% if books %}
         {% for book in books %}

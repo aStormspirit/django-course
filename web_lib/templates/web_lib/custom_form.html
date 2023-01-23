@@ -1,0 +1,31 @@
+{% extends "admin/change_form.html" %}
+
+{% block content %}
+    {{ block.super }}
+    {% block result_list %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">desc</th>
+            <th scope="col">page num</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if books %}
+            {% for book in books %}
+            <tr>
+                <th class='row'>
+                    <a href="{% url 'admin:web_lib_book_change' book.pk %}">{{book.title}}</a>
+                </th>
+                <td>{{book.description}}</td>
+                <td>{{book.page_num}}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <p>No books</p>
+        {% endif %}
+        </tbody>
+      </table>
+    {% endblock %}
+{% endblock %}

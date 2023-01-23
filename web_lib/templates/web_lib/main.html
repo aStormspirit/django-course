@@ -17,6 +17,14 @@
     {% block content %}
       <div>
         <h1>Welcome to Web Lib</h1>
+        <br />
+        <form action={% url 'authors' %} method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            {{form.as_p}}
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
     {% endblock %}
     <!-- Optional JavaScript; choose one of the two! -->

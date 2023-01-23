@@ -28,6 +28,13 @@ class Author(models.Model):
     email = models.EmailField(verbose_name='Почта автора')
     lit_type = models.CharField(max_length=1, verbose_name='Тип литературы', choices=TYPES, default='a')
 
+    def info(self):
+        name = ('Name: %s' % self.name)
+        age = ('age: %s' % self.age)
+        lit_type = ('lit_type: %s' % self.get_lit_type_display())
+
+        return [name, age, lit_type]
+
     def __str__(self):
         return self.name
 
